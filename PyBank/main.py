@@ -31,10 +31,10 @@ with open(budget_data) as fdata:
             greatest_decrease[row[0]] = change
         #net_total = net_total + header[1]
     average_changes = int(net_total)/int(months)
-    print("Financial Analysis")
-    print("---------------------")
-    print("Total Months:" months)
-    print("Net Total:" net_total)
-    print("Average Change:" average_changes)
-    print("Greatest Increase in Profits:", greatest_increase)
-    print("Greatest Decrease in Profits:", greatest_decrease)
+    print(f"Financial Analysis")
+    print(f"---------------------")
+    print(f"Total Months: {months}")
+    print(f"Net Total: {net_total}")
+    print(f"Average Change: {average_changes}")
+    print(f"Greatest Increase in Profits: {greatest_increase}")
+    print(f"Greatest Decrease in Profits: {greatest_decrease}")
