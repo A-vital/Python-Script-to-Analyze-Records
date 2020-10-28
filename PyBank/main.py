@@ -5,22 +5,34 @@ from csv import reader
 
 months = 0
 net_total = 0
-average_changes = 0
+average_changes = 0.0
 greatest_increase = {}
 greatest_decrease = {}
+current_month = 0
+previous_month = 0
+change = 0
 
 #Read in a csv file
 budget_data = os.path.join("Resources", "budget_data.csv")
-with open(budget_data) as financial_data:
-    csv_reader = reader(financial_data)
-    #reader = csv.reader(financial_data)
+with open(budget_data) as fdata:
+    csv_reader = csv.reader(fdata)
     header = next(csv_reader)
-    firstrow = next(csv_reader)
-    months = months + 1
-    net_total = net_total + net_total
-    for row in csv_reader:
-        months = sum(1 for row in csv_reader) + 2
-        print(months)
+    for row in csv_reader :
+        net_total += int(row[1])
+        months += 1
+        current_month = row[1]
+        change = int(current_month) - int(previous_month)
+        #if current month is greater than previous month add to greatest_increase 
+        if int(current_month) > int(previous_month):
+            #add the first element as a key and the change to greatest_increase
+            greatest_increase[row[0]] = change  
+        else:
+            #add to greatest decrease
+            greatest_decrease[row[0]] = change
+    print(net_total)
+    print(months)
+    print(greatest_increase)
+    print(greatest_decrease)
         #net_total = net_total + header[1]
-        #averge_changes = (net_total/months)
-
+    average_changes = int(net_total)/int(months)
+    print(average_changes)
