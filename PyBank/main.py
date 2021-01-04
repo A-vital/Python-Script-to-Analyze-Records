@@ -14,10 +14,10 @@ change = 0
 
 #Read in a csv file
 budget_data = os.path.join("Resources", "budget_data.csv")
-with open(budget_data) as fdata:
-    csv_reader = csv.reader(fdata)
-    header = next(csv_reader)
-    for row in csv_reader :
+with open(budget_data, newline="") as csvfile:
+    csvreader = csv.reader(csvfile)
+    header = next(csvreader)
+    for row in csvreader :
         net_total += int(row[1])
         months += 1
         current_month = row[1]
