@@ -9,7 +9,7 @@ total_candidates = 0
 candidates = []
 candidate_votes = {}
 
-election = os.path.join('Users', 'apetek', 'Desktop', 'Github', 'python-challange', 'PyPoll', 'Resources', 'election_data.csv')
+election = os.path.join(os.path.sep, 'Users/apetek/Desktop/Github/python-challange/PyPoll/Resources/election_data.csv')
 with open(election, newline="") as csvfile:
     reader = csv.reader(csvfile)
 
