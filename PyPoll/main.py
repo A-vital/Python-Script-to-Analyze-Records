@@ -8,3 +8,4 @@ total_candidates = 0
 candidate_votes = {}
 
 election = os.path.join("Resources", "election_data.csv")
+with open(election, newline="") as csvfile
