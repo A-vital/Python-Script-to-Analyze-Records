@@ -9,7 +9,7 @@ total_candidates = 0
 candidates = []
 candidate_votes = {}
 
-election = os.path.join("Resources", "election_data.csv")
+election = os.path.join('Users', 'apetek', 'Desktop', 'Github', 'python-challange', 'PyPoll', 'Resources', 'election_data.csv')
 with open(election, newline="") as csvfile:
     reader = csv.reader(csvfile)
 
@@ -34,3 +34,10 @@ with open(election, newline="") as csvfile:
     for candidate in candidate_votes:
         print(candidate + " " + str(round(((candidate_votes[candidate]/votes)*100))) + "%" + " (" + str(candidate_votes[candidate]) + ")") 
         candidate_results = (candidate + " " + str(round(((candidate_votes[candidate]/votes)*100))) + "%" + " (" + str(candidate_votes[candidate]) + ")") 
+
+winner = sorted(candidate_votes.items(), key=itemgetter(1), reverse=True)
+
+#results
+print("-------------------------")
+print("Winner: " + str(winner[0]))
+print("-------------------------")
