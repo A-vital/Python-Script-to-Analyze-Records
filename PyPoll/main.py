@@ -15,16 +15,16 @@ with open(election, newline="") as csvfile:
 
     for row in reader:
         votes = votes + 1
-        total_candidates = row["Candidate"]        
+        total_candidates = row[2]        
 
-        if row["Candidate"] not in candidates:
+        if row[2] not in candidates:
             
-            candidates.append(row["Candidate"])
+            candidates.append(row[2])
 
-            candidate_votes[row["Candidate"]] = 1
+            candidate_votes[row[2]] = 1
             
         else:
-            candidate_votes[row["Candidate"]] = candidate_votes[row["Candidate"]] + 1
+            candidate_votes[row[2]] = candidate_votes[row[2]] + 1
 
     print("Election Results")
     print("-------------------------")
