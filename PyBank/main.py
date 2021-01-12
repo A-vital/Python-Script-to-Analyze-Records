@@ -13,7 +13,7 @@ previous_month = 0
 change = 0
 
 #Read in a csv file
-budget_data = os.path.join(os.path.sep, "Resources", "budget_data.csv")
+budget_data = os.path.join(os.path.sep, 'Users/apetek/Desktop/Github/python-challange/PyBank/Resources/budget_data.csv')
 with open(budget_data, newline="") as csvfile:
     csvreader = csv.reader(csvfile)
     header = next(csvreader)
